@@ -18,12 +18,16 @@ const CommentList: React.FC<{ postId: string }> = ({ postId }) => {
         const response = await databases.listDocuments('YOUR_DATABASE_ID', 'YOUR_COMMENTS_COLLECTION_ID', [
           Query.equal('postId', postId)
         ]);
-        setComments(response.documents as Comment[]);
+        setComments(response.documents.map(doc => ({
+          $id: doc.$id,
+          content: doc.content,
+          authorId: doc.authorId,
+          postId: doc.postId
+        })));
       } catch (error) {
         console.error('Error fetching comments:', error);
       }
-    };
-    fetchComments();
+    };    fetchComments();
   }, [postId]);
 
   return (

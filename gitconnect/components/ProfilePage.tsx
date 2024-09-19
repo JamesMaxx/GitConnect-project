@@ -17,12 +17,18 @@ const ProfilePage: React.FC<{ userId: string }> = ({ userId }) => {
     const fetchProfile = async () => {
       try {
         const response = await databases.getDocument('YOUR_DATABASE_ID', 'YOUR_COLLECTION_ID', userId);
-        setProfile(response as ProfileData);
+        setProfile({
+          $id: response.$id,
+          name: response.name,
+          email: response.email,
+          education: response.education,
+          workExperience: response.workExperience,
+          githubRepositories: response.githubRepositories,
+        } as ProfileData);
       } catch (error) {
         console.error('Error fetching profile:', error);
       }
     };
-
     fetchProfile();
   }, [userId]);
 
