@@ -14,12 +14,15 @@ const DeveloperList: React.FC = () => {
     const fetchDevelopers = async () => {
       try {
         const response = await databases.listDocuments('YOUR_DATABASE_ID', 'YOUR_COLLECTION_ID');
-        setDevelopers(response.documents as Developer[]);
+        setDevelopers(response.documents.map(doc => ({
+          $id: doc.$id,
+          name: doc.name,
+          email: doc.email
+        })));
       } catch (error) {
         console.error('Error fetching developers:', error);
       }
     };
-
     fetchDevelopers();
   }, []);
 

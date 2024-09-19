@@ -18,12 +18,17 @@ const PostList: React.FC<{ userId: string }> = ({ userId }) => {
   const fetchPosts = async () => {
     try {
       const response = await databases.listDocuments('YOUR_DATABASE_ID', 'YOUR_POSTS_COLLECTION_ID');
-      setPosts(response.documents as Post[]);
+      setPosts(response.documents.map(doc => ({
+        $id: doc.$id,
+        content: doc.content,
+        authorId: doc.authorId,
+        likes: doc.likes,
+        dislikes: doc.dislikes
+      })));
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
   };
-
   useEffect(() => {
     fetchPosts();
   }, []);

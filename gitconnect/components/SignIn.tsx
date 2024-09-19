@@ -12,7 +12,7 @@ const SignIn: React.FC = () => {
 
   const onSubmit = async (data: SignInFormData) => {
     try {
-      await account.createEmailSession(data.email, data.password);
+      await account.createSession(data.email, data.password);
       // Handle successful sign in
     } catch (error) {
       console.error('Sign in error:', error);
