@@ -30,7 +30,7 @@ const ProfilePage: React.FC<{ userId: string }> = ({ userId }) => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold">{profile.name}'s Profile</h2>
+      <h2 className="text-2xl font-bold">{profile.name}s Profile</h2>
       <section>
         <h3 className="text-xl font-semibold">Personal Details</h3>
         <p>Email: {profile.email}</p>
