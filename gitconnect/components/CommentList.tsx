@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { databases } from '../lib/appwrite';
+import { Query } from 'appwrite';
 
 type Comment = {
   $id: string;
@@ -15,14 +16,13 @@ const CommentList: React.FC<{ postId: string }> = ({ postId }) => {
     const fetchComments = async () => {
       try {
         const response = await databases.listDocuments('YOUR_DATABASE_ID', 'YOUR_COMMENTS_COLLECTION_ID', [
-          databases.equal('postId', postId)
+          Query.equal('postId', postId)
         ]);
         setComments(response.documents as Comment[]);
       } catch (error) {
         console.error('Error fetching comments:', error);
       }
     };
-
     fetchComments();
   }, [postId]);
 
