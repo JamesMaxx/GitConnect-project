@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { databases } from '../lib/appwrite';
+import { databases } from '../src/lib/appwrite';
 
 type Developer = {
   $id: string;
