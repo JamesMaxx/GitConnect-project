@@ -1,7 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { account } from './src/lib/appwrite';
-
+import { account } from '../lib/appwrite';
 type SignUpFormData = {
   name: string;
   email: string;
