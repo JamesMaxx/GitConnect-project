@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { databases } from './src/lib/appwrite';
+import { database } from '../lib/appwrite';
 
 type EditProfileFormData = {
   name: string;

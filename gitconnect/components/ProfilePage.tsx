@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { databases } from './src/lib/appwrite';
+import { database } from '../lib/appwrite';
 
 type ProfileData = {
   $id: string;
