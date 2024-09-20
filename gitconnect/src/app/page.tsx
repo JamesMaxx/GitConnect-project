@@ -1,5 +1,4 @@
-'use client';
-
+// src/pages/index.tsx
 import React, { useState, useEffect } from 'react';
 import { account } from '../../lib/appwrite';
 import SignUp from '../../components/SignUp';
