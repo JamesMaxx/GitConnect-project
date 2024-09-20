@@ -17,7 +17,7 @@ const PostList: React.FC<{ userId: string }> = ({ userId }) => {
 
   const fetchPosts = async () => {
     try {
-      const response = await databases.listDocuments('YOUR_DATABASE_ID', 'YOUR_POSTS_COLLECTION_ID');
+      const response = await database.listDocuments('YOUR_DATABASE_ID', 'YOUR_POSTS_COLLECTION_ID');
       setPosts(response.documents.map(doc => ({
         $id: doc.$id,
         content: doc.content,

@@ -13,7 +13,7 @@ const DeveloperList: React.FC = () => {
   useEffect(() => {
     const fetchDevelopers = async () => {
       try {
-        const response = await databases.listDocuments('YOUR_DATABASE_ID', 'YOUR_COLLECTION_ID');
+        const response = await database.listDocuments('YOUR_DATABASE_ID', 'YOUR_COLLECTION_ID');
         setDevelopers(response.documents.map(doc => ({
           $id: doc.$id,
           name: doc.name,

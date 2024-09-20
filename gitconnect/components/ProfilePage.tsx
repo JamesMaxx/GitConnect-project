@@ -16,7 +16,7 @@ const ProfilePage: React.FC<{ userId: string }> = ({ userId }) => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await databases.getDocument('YOUR_DATABASE_ID', 'YOUR_COLLECTION_ID', userId);
+        const response = await database.getDocument('YOUR_DATABASE_ID', 'YOUR_COLLECTION_ID', userId);
         setProfile({
           $id: response.$id,
           name: response.name,

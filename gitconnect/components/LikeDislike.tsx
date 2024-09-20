@@ -1,5 +1,5 @@
 import React from 'react';
-import { database } from '../lib/appwrite';
+import { database as databases } from '../lib/appwrite';
 
 type LikeDislikeProps = {
   postId: string;
