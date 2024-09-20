@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { account } from './lib/appwrite';
-import SignUp from './components/SignUp';
-import SignIn from './components/SignIn';
-import DeveloperList from './components/DeveloperList';
-import ProfilePage from './components/ProfilePage';
-import EditProfile from './components/EditProfile';
-import PostList from './components/PostList';
-import CreatePost from './components/CreatePost';
+import { account } from '../../lib/appwrite';
+import SignUp from '../../components/SignUp';
+import SignIn from '../../components/SignIn';
+import DeveloperList from '../../components/DeveloperList';
+import ProfilePage from '../../components/ProfilePage';
+import EditProfile from '../../components/EditProfile';
+import PostList from '../../components/PostList';
+import CreatePost from '../../components/CreatePost';
 
 const Home: React.FC = () => {
   const [user, setUser] = useState<any>(null);
