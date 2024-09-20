@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { databases } from '../src/lib/appwrite';
+import { databases } from './src/lib/appwrite';
 
 type CreateCommentFormData = {
   content: string;

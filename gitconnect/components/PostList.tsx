@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { databases } from '../src/lib/appwrite';
+import { databases } from './src/lib/appwrite';
 import CommentList from './CommentList';
 import CreateComment from './CreateComment';
 import LikeDislike from './LikeDislike';

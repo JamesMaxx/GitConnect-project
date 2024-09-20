@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { account } from '../src/lib/appwrite';
+import { account } from './src/lib/appwrite';
 
 type SignInFormData = {
   email: string;
